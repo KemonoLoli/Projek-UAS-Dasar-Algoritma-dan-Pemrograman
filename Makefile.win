@@ -1,0 +1,46 @@
+# Project: Project_UAS_Alpro
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Main.o "1\ Member_Login.o" "2\ PilihanPemesanan.o" "3\ Menu.o" "4\ Keranjang.o" "5\ MetodePembayaran.o" "6\ TampilanAkhir.o"
+LINKOBJ  = Main.o "1 Member_Login.o" "2 PilihanPemesanan.o" "3 Menu.o" "4 Keranjang.o" "5 MetodePembayaran.o" "6 TampilanAkhir.o"
+LIBS     = -L"D:/Be Productive!/Dev-Cpp/MinGW64/lib" -L"D:/Be Productive!/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Be Productive!/Dev-Cpp/MinGW64/include" -I"D:/Be Productive!/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Be Productive!/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Be Productive!/Dev-Cpp/MinGW64/include" -I"D:/Be Productive!/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Be Productive!/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Be Productive!/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project_UAS_Alpro.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Main.o: Main.cpp
+	$(CPP) -c Main.cpp -o Main.o $(CXXFLAGS)
+
+"1\ Member_Login.o": 1\ Member_Login.cpp
+	$(CPP) -c "1 Member_Login.cpp" -o "1 Member_Login.o" $(CXXFLAGS)
+
+"2\ PilihanPemesanan.o": 2\ PilihanPemesanan.cpp
+	$(CPP) -c "2 PilihanPemesanan.cpp" -o "2 PilihanPemesanan.o" $(CXXFLAGS)
+
+"3\ Menu.o": 3\ Menu.cpp
+	$(CPP) -c "3 Menu.cpp" -o "3 Menu.o" $(CXXFLAGS)
+
+"4\ Keranjang.o": 4\ Keranjang.cpp
+	$(CPP) -c "4 Keranjang.cpp" -o "4 Keranjang.o" $(CXXFLAGS)
+
+"5\ MetodePembayaran.o": 5\ MetodePembayaran.cpp
+	$(CPP) -c "5 MetodePembayaran.cpp" -o "5 MetodePembayaran.o" $(CXXFLAGS)
+
+"6\ TampilanAkhir.o": 6\ TampilanAkhir.cpp
+	$(CPP) -c "6 TampilanAkhir.cpp" -o "6 TampilanAkhir.o" $(CXXFLAGS)
